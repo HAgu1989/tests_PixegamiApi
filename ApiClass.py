@@ -2,7 +2,7 @@ import uuid
 import requests
 
 # Class definition of api endpoints.
-# If somthing change in API structure its one point change wihout need to rwfactor whole Code
+# If somthing change in API structure its one point change wihout need to refactor whole code
 class Pixegami:
     def __init__(self) -> None:
         self.root = "https://todo.pixegami.io/"
