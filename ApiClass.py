@@ -1,7 +1,8 @@
 import uuid
 import requests
 
-
+# Class definition of api endpoints.
+# If somthing change in API structure its one point change wihout need to rwfactor whole Code
 class Pixegami:
     def __init__(self) -> None:
         self.root = "https://todo.pixegami.io/"
@@ -10,6 +11,8 @@ class Pixegami:
         self.getTaskList = 'https://todo.pixegami.io/list-tasks/'  # + user_id
         self.updateTask = "https://todo.pixegami.io/update-task"
         self.deleteTask = "https://todo.pixegami.io/delete-task/"  # + task_id
+        
+# Method used to generate uniqe test data
 
     @staticmethod
     def newPayload():
@@ -39,7 +42,7 @@ class Pixegami:
         return response
 
     def update_task(self, task_id, user_id):
-        new_payload = self.newPayload()
+        new_payload = Pixegami.newPayload()
         response = requests.put(self.updateTask, json={
             "content": new_payload["content"],
             "user_id": user_id,
